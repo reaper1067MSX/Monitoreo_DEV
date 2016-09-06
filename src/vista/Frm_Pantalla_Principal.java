@@ -27,22 +27,154 @@ public class Frm_Pantalla_Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lbl_factura1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Jgv_tabla_monitoreo = new javax.swing.JTable();
+        lbl_factura = new javax.swing.JLabel();
+        lbl_factura2 = new javax.swing.JLabel();
+        lbl_factura3 = new javax.swing.JLabel();
+        lbl_factura4 = new javax.swing.JLabel();
+        lbl_factura5 = new javax.swing.JLabel();
+        lbl_factura6 = new javax.swing.JLabel();
+        lbl_factura7 = new javax.swing.JLabel();
+        lbl_factura8 = new javax.swing.JLabel();
+
+        lbl_factura1.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_factura1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_factura1.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_factura1.setText("Facturas");
+        lbl_factura1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_factura1.setOpaque(true);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        Jgv_tabla_monitoreo.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Empresa", "Fecha / hora", "PR", "RC", "PR", "RC", "PR", "RC", "PR", "RC", "PR", "RC", "PR", "RC", "PR", "RC", "PR", "RC"
+            }
+        ));
+        Jgv_tabla_monitoreo.getTableHeader().setResizingAllowed(false);
+        Jgv_tabla_monitoreo.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(Jgv_tabla_monitoreo);
+        Jgv_tabla_monitoreo.getAccessibleContext().setAccessibleDescription("");
+
+        lbl_factura.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_factura.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_factura.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_factura.setText("Facturas");
+        lbl_factura.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_factura.setOpaque(true);
+
+        lbl_factura2.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_factura2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_factura2.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_factura2.setText("Retenciones");
+        lbl_factura2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_factura2.setOpaque(true);
+
+        lbl_factura3.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_factura3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_factura3.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_factura3.setText("Notas de credito");
+        lbl_factura3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_factura3.setOpaque(true);
+
+        lbl_factura4.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_factura4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_factura4.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_factura4.setText("Notas de debito");
+        lbl_factura4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_factura4.setOpaque(true);
+
+        lbl_factura5.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_factura5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_factura5.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_factura5.setText("Factura - ZA");
+        lbl_factura5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_factura5.setOpaque(true);
+
+        lbl_factura6.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_factura6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_factura6.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_factura6.setText("Nota Credito ZA");
+        lbl_factura6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_factura6.setOpaque(true);
+
+        lbl_factura7.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_factura7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_factura7.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_factura7.setText("Nota debito - ZA");
+        lbl_factura7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_factura7.setOpaque(true);
+
+        lbl_factura8.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_factura8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_factura8.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_factura8.setText("Guias");
+        lbl_factura8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_factura8.setOpaque(true);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 509, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(111, 111, 111)
+                        .addComponent(lbl_factura, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbl_factura2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_factura3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_factura4, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_factura8, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_factura5, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_factura6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_factura7, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 7, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 343, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(42, 42, 42)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lbl_factura)
+                    .addComponent(lbl_factura2)
+                    .addComponent(lbl_factura3)
+                    .addComponent(lbl_factura4)
+                    .addComponent(lbl_factura5)
+                    .addComponent(lbl_factura6)
+                    .addComponent(lbl_factura7)
+                    .addComponent(lbl_factura8))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(41, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    
+    //Ajuste de tamaño de JTable
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -71,13 +203,22 @@ public class Frm_Pantalla_Principal extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new Frm_Pantalla_Principal().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new Frm_Pantalla_Principal().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Jgv_tabla_monitoreo;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbl_factura;
+    private javax.swing.JLabel lbl_factura1;
+    private javax.swing.JLabel lbl_factura2;
+    private javax.swing.JLabel lbl_factura3;
+    private javax.swing.JLabel lbl_factura4;
+    private javax.swing.JLabel lbl_factura5;
+    private javax.swing.JLabel lbl_factura6;
+    private javax.swing.JLabel lbl_factura7;
+    private javax.swing.JLabel lbl_factura8;
     // End of variables declaration//GEN-END:variables
 }
