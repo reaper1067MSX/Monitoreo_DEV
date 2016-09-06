@@ -27,24 +27,23 @@ public class Frm_Pantalla_Principal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lbl_factura1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         Jgv_tabla_monitoreo = new javax.swing.JTable();
         lbl_factura = new javax.swing.JLabel();
-        lbl_factura2 = new javax.swing.JLabel();
-        lbl_factura3 = new javax.swing.JLabel();
-        lbl_factura4 = new javax.swing.JLabel();
-        lbl_factura5 = new javax.swing.JLabel();
-        lbl_factura6 = new javax.swing.JLabel();
-        lbl_factura7 = new javax.swing.JLabel();
-        lbl_factura8 = new javax.swing.JLabel();
-
-        lbl_factura1.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_factura1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_factura1.setLabelFor(Jgv_tabla_monitoreo);
-        lbl_factura1.setText("Facturas");
-        lbl_factura1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        lbl_factura1.setOpaque(true);
+        lbl_retenciones = new javax.swing.JLabel();
+        lbl_NC = new javax.swing.JLabel();
+        lbl_NDB = new javax.swing.JLabel();
+        lbl_facturaZA = new javax.swing.JLabel();
+        lbl_NC_ZA = new javax.swing.JLabel();
+        lbl_NDB_ZA = new javax.swing.JLabel();
+        lbl_guias = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -72,100 +71,160 @@ public class Frm_Pantalla_Principal extends javax.swing.JFrame {
         lbl_factura.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         lbl_factura.setOpaque(true);
 
-        lbl_factura2.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_factura2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_factura2.setLabelFor(Jgv_tabla_monitoreo);
-        lbl_factura2.setText("Retenciones");
-        lbl_factura2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        lbl_factura2.setOpaque(true);
+        lbl_retenciones.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_retenciones.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_retenciones.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_retenciones.setText("Retenciones");
+        lbl_retenciones.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_retenciones.setOpaque(true);
 
-        lbl_factura3.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_factura3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_factura3.setLabelFor(Jgv_tabla_monitoreo);
-        lbl_factura3.setText("Notas de credito");
-        lbl_factura3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        lbl_factura3.setOpaque(true);
+        lbl_NC.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_NC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_NC.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_NC.setText("Notas de credito");
+        lbl_NC.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_NC.setOpaque(true);
 
-        lbl_factura4.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_factura4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_factura4.setLabelFor(Jgv_tabla_monitoreo);
-        lbl_factura4.setText("Notas de debito");
-        lbl_factura4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        lbl_factura4.setOpaque(true);
+        lbl_NDB.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_NDB.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_NDB.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_NDB.setText("Notas de debito");
+        lbl_NDB.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_NDB.setOpaque(true);
 
-        lbl_factura5.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_factura5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_factura5.setLabelFor(Jgv_tabla_monitoreo);
-        lbl_factura5.setText("Factura - ZA");
-        lbl_factura5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        lbl_factura5.setOpaque(true);
+        lbl_facturaZA.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_facturaZA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_facturaZA.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_facturaZA.setText("Factura - ZA");
+        lbl_facturaZA.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_facturaZA.setOpaque(true);
 
-        lbl_factura6.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_factura6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_factura6.setLabelFor(Jgv_tabla_monitoreo);
-        lbl_factura6.setText("Nota Credito ZA");
-        lbl_factura6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        lbl_factura6.setOpaque(true);
+        lbl_NC_ZA.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_NC_ZA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_NC_ZA.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_NC_ZA.setText("Nota Credito ZA");
+        lbl_NC_ZA.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_NC_ZA.setOpaque(true);
 
-        lbl_factura7.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_factura7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_factura7.setLabelFor(Jgv_tabla_monitoreo);
-        lbl_factura7.setText("Nota debito - ZA");
-        lbl_factura7.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        lbl_factura7.setOpaque(true);
+        lbl_NDB_ZA.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_NDB_ZA.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_NDB_ZA.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_NDB_ZA.setText("Nota debito - ZA");
+        lbl_NDB_ZA.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_NDB_ZA.setOpaque(true);
 
-        lbl_factura8.setBackground(new java.awt.Color(255, 255, 255));
-        lbl_factura8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lbl_factura8.setLabelFor(Jgv_tabla_monitoreo);
-        lbl_factura8.setText("Guias");
-        lbl_factura8.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-        lbl_factura8.setOpaque(true);
+        lbl_guias.setBackground(new java.awt.Color(255, 255, 255));
+        lbl_guias.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lbl_guias.setLabelFor(Jgv_tabla_monitoreo);
+        lbl_guias.setText("Guias");
+        lbl_guias.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        lbl_guias.setOpaque(true);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Leyenda"));
+
+        jLabel2.setText("PR = Procesada");
+
+        jLabel3.setText("RC = Rechazadas");
+
+        jLabel4.setText("Documentos rechazados");
+
+        jLabel5.setBackground(new java.awt.Color(255, 0, 51));
+        jLabel5.setOpaque(true);
+
+        jLabel6.setBackground(new java.awt.Color(255, 102, 0));
+        jLabel6.setOpaque(true);
+
+        jLabel7.setText("Documentos que no se han procesado en 4 horas o más");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel7))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel4)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
-                        .addComponent(lbl_factura, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lbl_factura2, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbl_factura3, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbl_factura4, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbl_factura8, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbl_factura5, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbl_factura6, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbl_factura7, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(101, 101, 101)
+                                .addComponent(lbl_factura, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(lbl_retenciones, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbl_NC, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbl_NDB, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbl_guias, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbl_facturaZA, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbl_NC_ZA, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(lbl_NDB_ZA, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 7, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(42, 42, 42)
+                .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_factura)
-                    .addComponent(lbl_factura2)
-                    .addComponent(lbl_factura3)
-                    .addComponent(lbl_factura4)
-                    .addComponent(lbl_factura5)
-                    .addComponent(lbl_factura6)
-                    .addComponent(lbl_factura7)
-                    .addComponent(lbl_factura8))
+                    .addComponent(lbl_retenciones)
+                    .addComponent(lbl_NC)
+                    .addComponent(lbl_NDB)
+                    .addComponent(lbl_facturaZA)
+                    .addComponent(lbl_NC_ZA)
+                    .addComponent(lbl_NDB_ZA)
+                    .addComponent(lbl_guias))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(41, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -210,15 +269,21 @@ public class Frm_Pantalla_Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Jgv_tabla_monitoreo;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel lbl_NC;
+    private javax.swing.JLabel lbl_NC_ZA;
+    private javax.swing.JLabel lbl_NDB;
+    private javax.swing.JLabel lbl_NDB_ZA;
     private javax.swing.JLabel lbl_factura;
-    private javax.swing.JLabel lbl_factura1;
-    private javax.swing.JLabel lbl_factura2;
-    private javax.swing.JLabel lbl_factura3;
-    private javax.swing.JLabel lbl_factura4;
-    private javax.swing.JLabel lbl_factura5;
-    private javax.swing.JLabel lbl_factura6;
-    private javax.swing.JLabel lbl_factura7;
-    private javax.swing.JLabel lbl_factura8;
+    private javax.swing.JLabel lbl_facturaZA;
+    private javax.swing.JLabel lbl_guias;
+    private javax.swing.JLabel lbl_retenciones;
     // End of variables declaration//GEN-END:variables
 }
