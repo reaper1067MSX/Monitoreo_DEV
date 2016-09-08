@@ -238,7 +238,7 @@ public class Frm_Pantalla_Principal extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jScrollPane2))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(432, 432, 432)
+                        .addGap(420, 420, 420)
                         .addComponent(lbl_factura, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbl_facturaZA, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -252,8 +252,9 @@ public class Frm_Pantalla_Principal extends javax.swing.JFrame {
                         .addComponent(lbl_NDB_ZA, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbl_retenciones, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(lbl_NC_ZA, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_NC_ZA, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 16, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
@@ -366,11 +367,12 @@ public void FillData(){
     result = con.Operaciones(query);
     
     DefaultTableModel model = (DefaultTableModel) Jgv_seguimiento.getModel();
+    Vector<Seguimiento> vector = new Vector<>();
     try{
         
         while(result.next()){
             @SuppressWarnings("UseOfObsoleteCollectionType")
-            Vector<Seguimiento> vector = new Vector<>();
+            
             Seguimiento x = new Seguimiento();
             
             x.setID(result.getInt("id_empresa"));
@@ -380,10 +382,9 @@ public void FillData(){
             x.setProcesado(result.getInt("nprocesado"));
             x.setRechazado(result.getInt("nrechazado"));
             
-            vector.add(x);
-            model.addRow(vector);    
+            vector.add(x);    
         }
-        
+        model.addRow(vector);
         Jgv_seguimiento.setModel(model);
         con.cierraConexion();
         
