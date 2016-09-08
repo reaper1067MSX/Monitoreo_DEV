@@ -5,6 +5,16 @@
  */
 package vista;
 
+import java.sql.ResultSet;
+import java.util.Vector;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
+import modelo.Conexion;
+import modelo.Seguimiento;
+
 /**
  *
  * @author DEV - Santiago
@@ -16,7 +26,27 @@ public class Frm_Pantalla_Principal extends javax.swing.JFrame {
      */
     public Frm_Pantalla_Principal() {
         initComponents();
-    }
+        
+        Conexion con = new Conexion();
+        con.conexion();
+        
+        //Dimensiones del JGridView
+        
+        TableColumnModel columnModel = Jgv_seguimiento.getColumnModel();
+        columnModel.getColumn(0).setPreferredWidth(100);
+        columnModel.getColumn(1).setPreferredWidth(300);
+        columnModel.getColumn(2).setPreferredWidth(200);
+        
+        //Proceso del timmer
+        
+        final Runnable tarea = new Runnable() {
+            public void run() {
+                FillData();
+            }
+        };
+        ScheduledExecutorService timer = Executors.newSingleThreadScheduledExecutor();
+        timer.scheduleAtFixedRate(tarea, 1, 1, TimeUnit.MINUTES);
+        }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -29,6 +59,8 @@ public class Frm_Pantalla_Principal extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         Jgv_tabla_monitoreo = new javax.swing.JTable();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        Jgv_seguimiento = new javax.swing.JTable();
         lbl_factura = new javax.swing.JLabel();
         lbl_retenciones = new javax.swing.JLabel();
         lbl_NC = new javax.swing.JLabel();
@@ -44,9 +76,7 @@ public class Frm_Pantalla_Principal extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setResizable(false);
+        btn_ejecutar = new javax.swing.JButton();
 
         Jgv_tabla_monitoreo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -63,6 +93,21 @@ public class Frm_Pantalla_Principal extends javax.swing.JFrame {
         Jgv_tabla_monitoreo.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(Jgv_tabla_monitoreo);
         Jgv_tabla_monitoreo.getAccessibleContext().setAccessibleDescription("");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        Jgv_seguimiento.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Codigo", "Empresa", "Fecha", "PR", "RC", "PR", "RC", "PR", "RC", "PR", "RC", "PR", "RC", "PR", "RC", "PR", "RC", "PR", "RC"
+            }
+        ));
+        Jgv_seguimiento.setName("Jgv_seguimiento"); // NOI18N
+        Jgv_seguimiento.getTableHeader().setReorderingAllowed(false);
+        jScrollPane2.setViewportView(Jgv_seguimiento);
 
         lbl_factura.setBackground(new java.awt.Color(255, 255, 255));
         lbl_factura.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -176,59 +221,80 @@ public class Frm_Pantalla_Principal extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        btn_ejecutar.setText("Ejecutar");
+        btn_ejecutar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ejecutarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(101, 101, 101)
-                                .addComponent(lbl_factura, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lbl_retenciones, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbl_NC, javax.swing.GroupLayout.PREFERRED_SIZE, 95, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbl_NDB, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbl_guias, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbl_facturaZA, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbl_NC_ZA, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(lbl_NDB_ZA, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 7, Short.MAX_VALUE)))
+                        .addContainerGap()
+                        .addComponent(jScrollPane2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(432, 432, 432)
+                        .addComponent(lbl_factura, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_facturaZA, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_guias, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_NC, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_NDB, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_NDB_ZA, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lbl_retenciones, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(lbl_NC_ZA, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(146, 146, 146)
+                .addComponent(btn_ejecutar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(31, 31, 31)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lbl_factura)
-                    .addComponent(lbl_retenciones)
+                    .addComponent(lbl_facturaZA)
+                    .addComponent(lbl_guias)
                     .addComponent(lbl_NC)
                     .addComponent(lbl_NDB)
-                    .addComponent(lbl_facturaZA)
-                    .addComponent(lbl_NC_ZA)
                     .addComponent(lbl_NDB_ZA)
-                    .addComponent(lbl_guias))
+                    .addComponent(lbl_retenciones)
+                    .addComponent(lbl_NC_ZA))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 108, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(btn_ejecutar)
+                        .addGap(52, 52, 52))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_ejecutarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ejecutarActionPerformed
+        // TODO add your handling code here:
+        
+        FillData();
+    }//GEN-LAST:event_btn_ejecutarActionPerformed
     
     
     //Ajuste de tamaño de JTable
@@ -268,7 +334,9 @@ public class Frm_Pantalla_Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable Jgv_seguimiento;
     private javax.swing.JTable Jgv_tabla_monitoreo;
+    private javax.swing.JButton btn_ejecutar;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -277,6 +345,7 @@ public class Frm_Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lbl_NC;
     private javax.swing.JLabel lbl_NC_ZA;
     private javax.swing.JLabel lbl_NDB;
@@ -286,4 +355,43 @@ public class Frm_Pantalla_Principal extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_guias;
     private javax.swing.JLabel lbl_retenciones;
     // End of variables declaration//GEN-END:variables
+
+public void FillData(){
+    
+    Conexion con = new Conexion();
+    con.conexion();
+    String query ="SELECT id_empresa, Empresa, fecha_sys ,  tipodoc, nprocesado, nrechazado FROM ctlm_seguimiento Order By tipodoc;";
+    
+    ResultSet result;
+    result = con.Operaciones(query);
+    
+    DefaultTableModel model = (DefaultTableModel) Jgv_seguimiento.getModel();
+    try{
+        
+        while(result.next()){
+            @SuppressWarnings("UseOfObsoleteCollectionType")
+            Vector<Seguimiento> vector = new Vector<>();
+            Seguimiento x = new Seguimiento();
+            
+            x.setID(result.getInt("id_empresa"));
+            x.setEmpresa(result.getString("Empresa"));
+            x.setFecha(result.getDate("fecha_sys"));
+            x.setTipo_doc(result.getString("tipodoc"));
+            x.setProcesado(result.getInt("nprocesado"));
+            x.setRechazado(result.getInt("nrechazado"));
+            
+            vector.add(x);
+            model.addRow(vector);    
+        }
+        
+        Jgv_seguimiento.setModel(model);
+        con.cierraConexion();
+        
+        
+    }catch(Exception e){
+        System.out.println(e.getMessage());
+    }
+    
+}
+
 }

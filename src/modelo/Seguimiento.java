@@ -16,13 +16,22 @@ import java.sql.Date;
 public class Seguimiento {
     
     //Atributos
+    private int id;
     private String empresa;
     private Date fecha;
-    private int n_aprobado;
+    private int n_procesado;
     private int n_rechazo;
     private String tipo_doc;
     
     //SET & Gets ======================================================
+    
+    public void setID(int x){
+        this.id = x;
+    }
+    
+    public int getID(){
+        return this.id;
+    }
     
     public void setEmpresa(String emp){
         this.empresa = emp;
@@ -40,12 +49,12 @@ public class Seguimiento {
         return this.fecha;
     }
     
-    public void setAprobado(int numero){
-        this.n_aprobado = numero;
+    public void setProcesado(int numero){
+        this.n_procesado = numero;
     }
     
-    public int getAprobado(){
-        return this.n_aprobado;
+    public int getProcedo(){
+        return this.n_procesado;
     }
     
     public void setRechazado(int numero){
@@ -63,6 +72,18 @@ public class Seguimiento {
     public String getTipo_doc(){
         return this.tipo_doc;
     }
+    
+    
+    public void to_String(){
+        
+        
+        
+        
+        
+    }
+    
+    
+    
     
     
     
